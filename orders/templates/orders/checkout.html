@@ -1,0 +1,152 @@
+{% extends 'ecomApp/base.html' %}
+
+{% block body %}
+
+<div class="min-h-screen bg-gray-100 py-10 px-4">
+
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-md shadow-sm">
+
+        <!-- Heading -->
+        <h1 class="text-4xl font-bold text-center mb-4">
+            Checkout Page
+        </h1>
+
+        {% if user.is_authenticated %}
+
+        <h3 class="text-gray-600 text-center mb-8">
+            Please check your address below and proceed with your order
+        </h3>
+
+        <!-- Address Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Full Name -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Full Name
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.full_name }}
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Phone
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.phone }}
+                </div>
+            </div>
+
+            <!-- Line 1 -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Address Line 1
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.line1 }}
+                </div>
+            </div>
+
+            <!-- Line 2 -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Address Line 2
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.line2 }}
+                </div>
+            </div>
+
+            <!-- City -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    City
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.city }}
+                </div>
+            </div>
+
+            <!-- State -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    State
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.state }}
+                </div>
+            </div>
+
+            <!-- Postal Code -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Postal Code
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.postal_code }}
+                </div>
+            </div>
+
+            <!-- Country -->
+            <div>
+                <label class="block font-semibold text-gray-700 mb-2">
+                    Country
+                </label>
+
+                <div class="w-full border border-gray-300 rounded px-4 py-3 bg-gray-50">
+                    {{ address.country }}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Confirm Button -->
+        <div class="mt-10">
+            <button id="place-order-btn"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded text-lg font-medium transition">
+                Click Here to Confirm
+            </button>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script>
+    $(document).on('click', function (e) {
+        e.preventDefault();
+        console.log("Order Page Clicked!")
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'place-order' %}",
+
+            data: {
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'POST',
+            },
+            success: function(json){
+                window.location.replace("{%url 'order-success'%}")
+            },
+            
+            error: function(json){
+                window.location.replace("{url 'order-failed'}")
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

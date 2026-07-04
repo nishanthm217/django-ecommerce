@@ -1,0 +1,62 @@
+{% extends 'ecomApp/base.html' %}
+{% block body %}
+
+<!--Outer container-->
+<div class="mx-w-7xl mx-auto grid grid-cols-3 gap-10 px-10 py-10">
+    <!--Image container-->
+    <div class="col-span-1 ">
+        <img class="w-110 h-110 rounded-lg shadow-sm" src="{{product.image.url}}">
+    </div>
+    
+    <!--Product Detail-->
+    <div class="col-span-1 space-y-6">
+        <h1 class="text-2xl font-semibold text-gray-900">{{product.name}}</h1>
+        <div class="text-yellow-600 font-bold">★★★★☆ <span class="text-gray-900">(12,364 ratings)</span></div>
+        <p class="text-3xl text-green-800 font-semibold">${{product.price}}</p>
+        <p class="text-sm text-green-700 font-medium">Inclusive of all taxes</p>
+        <ul>
+            <li>{{product.description}}</li>
+        </ul>
+    </div>
+
+    <!--Buy Button-->
+    <div class="col-span-1 border rounded-lg p-6 space-y-4 shadow-md">
+        <p class="text-2xl font-semibold text-gray-800">${{product.price}}</p>
+        <div>
+            <select name="" id="select">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+        </div>
+        <p class="text-sm text-green-700">Free delivery by tomorrow</p>
+        {% if product.stock %}
+        <p class="text-sm text-green-700">In Stock </p>
+        {% else %}
+        <p class="text-sm text-green-700">Out of Stock </p>
+        {% endif %}
+        <button id = "atc" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg" value="{{product.id}}">Add to the cart</button>
+        <a href="{% url 'checkoutPage' %}" class="block w-full bg-gray-900 text-white font-semibold py-2 rounded-lg text-center">Buy now</a>
+        <p class="text-1xl font-semibold">Sold By: Kaizen Stores</p>
+    </div>
+</div>
+<script>
+    $(document).on("click","#atc", function(e){
+        console.log("Add to the cart button clicked");
+        $.ajax({
+            <!--It is sending post request from the frontend to backend through AJAX-->
+            type:"POST",
+            url:'{% url "cart_add" %}',
+            data: {
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                product_id:$("#atc").val(),
+                product_quantity:$("#select option:selected").text(),
+            },
+            success: function (json){
+                console.log(json)
+                document.getElementById("cart-qty").textContent = json.qty
+            },
+        });
+    });
+</script>
+{% endblock %}

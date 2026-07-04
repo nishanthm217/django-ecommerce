@@ -1,0 +1,24 @@
+{% extends 'ecomApp/base.html'%}
+    {% block body %}
+    <div>
+        <h1 class='text-2xl px-32 pt-20'>Today's Deal</h1>
+        <div class="px-32">
+            <hr class='border border-gray-300 my-6'>
+        </div>
+        <div class="grid grid-cols-4 px-32 gap-6">
+            {% for product in products %}
+            <div class='rounded-lg shadow-lg p-4'>
+                <img class="rounded-md mb-4 w-80 h-80 object-cover mx-auto"src="{{product.image.url}}" alt="">
+                <a class="text-lg font-semibold" href="{{product.get_absolute_url}}">{{product.name}}</a>
+                <!--<p class="text-black-300 font-semibold mt-2">{{product.description}}</p>-->
+                <p class="text-green-500 font-bold mt-2 text-lg">₹{{product.price}}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endblock  %}>
+
+    
+
+    

@@ -1,0 +1,120 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <title>The Base Page</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nav-->
+    <nav class="bg-gray-200 shadow-md px-4 py-2 px-16 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <!-- <img
+          src="https://via.placeholder.com/40"
+          alt="Logo"
+          class="h-10 w-10"
+        /> -->
+        <span class="text-md font-semibold text-gray-800 px-4">☰ Categories</span>
+      </div>
+
+      <!-- Navigation Links (Hidden on Mobile) -->
+      <div class="hidden md:flex space-x-6 font-bold text-sm">
+        <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Shop</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </div>
+
+      <!-- Search Bar -->
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-4 font-bold text-sm">
+        <a href="#" class="text-gray-700 hover:text-blue-600"
+          >Sell On Paradox</a
+        >
+        <a href="#" class="text-gray-700 hover:text-blue-600"
+          >Track your order</a
+        >
+        <a href="#" class="text-gray-700 hover:text-blue-600">USD</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">🇮🇳 India</a>
+      </div>
+    </nav>
+    <nav
+      class="bg-blue-500 shadow-md px-4 py-3 px-16 flex items-center justify-between"
+    >
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <!-- <img
+          src="https://via.placeholder.com/40"
+          alt="Logo"
+          class="h-10 w-10"
+        /> -->
+        <a href="{% url 'basePage' %}" class="text-xl font-semibold text-gray-800 px-4"> ParaDox</a> 
+      </div>
+      
+      <!-- Navigation Links (Hidden on Mobile) -->
+
+      <!-- Search Bar -->
+      <div class="lg:block flex-grow mx-6 bg-white">
+        <form class="relative w-full">
+          <input
+            type="text"
+            name="item_name"
+            placeholder="Search products..."
+            class="w-full px-4 py-2 pr-20 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button
+            type="submit"
+            class="absolute right-1 top-1 bottom-1 px-4 bg-gray-900 text-white hover:bg-gray-700"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-4">
+        <!-- Search Icon for Mobile -->
+        <button class="md:hidden text-gray-600 hover:text-blue-600">🔍</button>
+
+        <!-- Cart -->
+        <a href="{% url 'cart-overview' %}" class="relative">
+          🛒
+          <span
+            id="cart-qty"
+            class="absolute -top-2 -right-2 text-xs bg-red-500 text-white rounded-full px-1">{{cart|length}}
+          </span>
+        </a>
+
+        <!-- User -->
+        <a href="{% url 'profilePage' %}" class="text-gray-600 hover:text-blue-600">👤</a>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <button class="md:hidden text-gray-600 hover:text-blue-600">☰</button>
+      </div>
+
+      <div>
+        {% if user.is_authenticated %}
+        <a class="text-bold text-white" href="{% url 'logoutPage' %}">Logout</a>
+        {% else %}
+        <a class="text-bold text-white" href="{% url 'loginPage' %}">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+    <!--Nav-->
+    {% block body %}
+    <!--Comment-->
+
+    {% endblock %}
+  </body>
+</html>

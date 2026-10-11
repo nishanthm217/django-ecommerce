@@ -1,0 +1,106 @@
+[
+{
+  "model": "ecomApp.productmodel",
+  "pk": 3,
+  "fields": {
+    "name": "iPhone 17 Pro",
+    "price": 20000.0,
+    "description": "Experience next-level performance with the iPhone 17 Pro, powered by Apple’s latest chipset and advanced AI capabilities. Its refined design, pro-grade camera system, and seamless ecosystem deliver a premium flagship experience.",
+    "image": "images/iPhone.PNG",
+    "slug": "iphone-17-pro",
+    "stock": 12,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 4,
+  "fields": {
+    "name": "Pixel 10 Pro",
+    "price": 53000.0,
+    "description": "The Pixel 10 Pro combines Google’s smartest AI features with a clean Android experience. Capture stunning photos with its industry-leading computational photography and enjoy fast, intuitive performance.",
+    "image": "images/pixel.PNG",
+    "slug": "pixel-10-pro-1",
+    "stock": 23,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 6,
+  "fields": {
+    "name": "Samsung S26 ultra",
+    "price": 60000.0,
+    "description": "The Galaxy S26 Ultra pushes boundaries with its massive display, top-tier performance, and advanced S Pen features. Its versatile camera setup and long-lasting battery make it a true productivity powerhouse.",
+    "image": "images/Samsung_vOU5d6C.PNG",
+    "slug": "samsung-s26-ultra-1",
+    "stock": 21,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 7,
+  "fields": {
+    "name": "Vivo x100 PRO",
+    "price": 27000.0,
+    "description": "The Vivo X100 Pro stands out with its exceptional camera system co-engineered with ZEISS, delivering stunning clarity and detail. Its powerful performance and sleek design make it perfect for photography LIKERS.",
+    "image": "images/vivo.PNG",
+    "slug": "vivo-x100-pro",
+    "stock": 15,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 9,
+  "fields": {
+    "name": "Apple Macbook Neo",
+    "price": 42000.0,
+    "description": "Powered by Mac OS and Apple integrated graphics, this lightweight laptop delivers smooth performance for work, study, and entertainment.\r\nIts fast SSD storage ensures quick boot times and responsive multitasking throughout the day.\r\nWith a slim and premium Citrus design, it offers both style and portability.\r\nWeighing just 1.23 kg, it is easy to carry anywhere with comfort.\r\nPerfect for students, professionals, and everyday productivity needs.",
+    "image": "images/mac.PNG",
+    "slug": "apple-macbook-neo-1",
+    "stock": 10,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 10,
+  "fields": {
+    "name": "Apple Macbook pro",
+    "price": 55000.0,
+    "description": "Powered by Mac OS and Apple integrated graphics, this lightweight laptop delivers smooth performance for work, study, and entertainment.\r\nIts fast SSD storage ensures quick boot times and responsive multitasking throughout the day.\r\nWith a slim and premium Citrus design, it offers both style and portability.\r\nWeighing just 1.23 kg, it is easy to carry anywhere with comfort.\r\nPerfect for students, professionals, and everyday productivity needs.",
+    "image": "images/macpro_nzFQYkA.PNG",
+    "slug": "apple-macbook-pro",
+    "stock": 5,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 11,
+  "fields": {
+    "name": "Asus Rog Zephyrus",
+    "price": 150000.0,
+    "description": "Experience exceptional performance with the AMD Ryzen AI 9 HX 370 processor and NVIDIA GeForce RTX 5070 Ti GPU for gaming, creativity, and multitasking.\r\nThe 14-inch 3K OLED 120Hz display delivers stunning visuals with vibrant colors and ultra-smooth performance.\r\nBuilt with a lightweight 1.57kg chassis and premium Slash Lighting design, it combines portability with futuristic aesthetics.\r\nAdvanced Thermal Grizzly Liquid Metal Cooling keeps the laptop efficient during heavy workloads and gaming sessions.\r\nFeaturing 32GB LPDDR5X RAM, 2TB SSD, Wi-Fi 7, and Windows 11 Home with Microsoft Office 2024 included.",
+    "image": "images/Rog.PNG",
+    "slug": "asus-rog-zephyrus",
+    "stock": 23,
+    "active": true
+  }
+},
+{
+  "model": "ecomApp.productmodel",
+  "pk": 12,
+  "fields": {
+    "name": "Apple iPad Mini",
+    "price": 29000.0,
+    "description": "Experience powerful performance with the Apple A17 Pro chip and advanced Apple Intelligence features for seamless multitasking and productivity.\r\nThe 8.3-inch Liquid Retina display delivers stunning clarity, vibrant colors, and an immersive viewing experience.\r\nCapture sharp photos and crystal-clear video calls with the 12MP front and rear cameras.\r\nWith Wi-Fi 6E connectivity, Touch ID security, and all-day battery life, it is built for speed and convenience.\r\nIts compact Space Grey design with 128GB storage makes it perfect for entertainment, creativity, and everyday use.",
+    "image": "images/tabmini.PNG",
+    "slug": "apple-ipad-mini",
+    "stock": 21,
+    "active": true
+  }
+}
+]

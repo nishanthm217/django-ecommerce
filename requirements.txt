@@ -1,0 +1,7 @@
+Django>=5.2,<5.3
+djangorestframework>=3.15
+PyMySQL>=1.1
+cryptography>=42      # needed by PyMySQL for MySQL 8 login
+Pillow>=10            # needed by ImageField (product images)
+python-dotenv>=1.0
+gunicorn>=22
